@@ -6,7 +6,8 @@ function viewMatchHistory(region, accountId)
 function renderMatchHistory( summoner, games)
 {
 	setTitle('Games of ' + summoner.SummonerName);
-	var linkContainer = paragraph(anchor('Return to profile', function () { system.summonerHandler.open(
+	var linkContainer = paragraph(anchor('Return to profile', function () { system.summonerHandler.open(getRegion(summoner.Region).abbreviation, summoner.AccountId); } ));
+	linkContainer.id = 'returnFromMatchHistory';
 	render( linkContainer);
 	renderSummonerGames( summoner, games);
 }
