@@ -56,7 +56,9 @@ function renderChampionTable( game, current) {
 		Builder.node('td', championName),
 		Builder.node('td',
 			image('Spell/Small/' + game.SummonerSpell1 + '.png', getSummonerSpell(game.SummonerSpell1), 20, 20) +
-			image('Spell/Small/' + game.SummonerSpell2 + '.png', getSummonerSpell(game.SummonerSpell2), 20, 20));
+			image('Spell/Small/' + game.SummonerSpell2 + '.png', getSummonerSpell(game.SummonerSpell2), 20, 20)
+		)
+	);
 	
 	gameTable_tbody.appendChild(gameTable_tr_championIcon);
 	gameTable_tbody.appendChild(gameTable_tr_otherInformations);
