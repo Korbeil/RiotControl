@@ -38,7 +38,7 @@ function renderChampionTable( game, current) {
 									width: '49%',
 									cellpadding: '2',
 									cellspacing: '0',
-									boder: '1',
+									display: 'inline-table',
 								});
 
 	var gameTable_tbody =
@@ -54,7 +54,7 @@ function renderChampionTable( game, current) {
 		Builder.node('td', { colspan: '2'}, image('Champion/Large/' + championName + '.png', championName, 140, 140)));
 	gameTable_tr_otherInformations = appendChilds( gameTable_tr_otherInformations,
 		Builder.node('td', championName),
-		Builder.node('td', image('Spell/Small/' + game.SummonerSpell1 + '.png', getSummonerSpell(game.SummonerSpell1), 20, 20)),
+		Builder.node('td', image('Spell/Small/' + game.SummonerSpell1 + '.png', getSummonerSpell(game.SummonerSpell1), 20, 20)) + '' +
 		Builder.node('td', image('Spell/Small/' + game.SummonerSpell2 + '.png', getSummonerSpell(game.SummonerSpell2), 20, 20))
 	);
 	
