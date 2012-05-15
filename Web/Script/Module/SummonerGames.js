@@ -35,8 +35,8 @@ function renderChampionTable( game, current) {
 
 	var gameTable =
 		Builder.node( 'table',	{
-									width: '150px',
-									height: '540px',
+									width: '144px',
+									height: '168px',
 									cellpadding: '2',
 									cellspacing: '0',
 									display: 'inline-table',
@@ -51,7 +51,7 @@ function renderChampionTable( game, current) {
 	var gameTable_tr_otherInformations =
 		Builder.node( 'tr');
 	
-	var gameTable_tr_otherInformations_td = Builder.node('td');
+	var gameTable_tr_otherInformations_td = Builder.node('td', { width: '52px'});
 	gameTable_tr_otherInformations_td = appendChilds( gameTable_tr_otherInformations_td,
 		Builder.node( 'img', 	{
 									src: getURL('Image/Spell/Small/' + game.SummonerSpell1 + '.png'),
