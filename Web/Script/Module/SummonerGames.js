@@ -23,30 +23,10 @@ function renderSummonerGame( game) {
 	var current = 'game_'+game.InternalGameId;
 	$('games').insert( Builder.node( 'div', { id:current}));
 	
-	var gameTable =
-		Builder.node( 'table',	{
-									width: '100%',
-									cellpadding: '2',
-									cellspacing: '0',
-									boder: '1',
-								});
-
-	var gameTable_tbody =
-		Builder.node( 'tbody');
-	
-	var gameTable_tr_championIcon =
-		Builder.node( 'tr', { colspan: '2'});
-	
-	var gameTable_tr_otherInformations =
-		Builder.node( 'tr');
-	
-	
-	gameTable.appendChild(gameTable_tbody);
-	
-	$(current).insert(gameTable);
+	renderChampionTable( game, current);
 }
 
-function renderChampionTable( game, divId) {
+function renderChampionTable( game, current) {
 	var gameTable =
 		Builder.node( 'table',	{
 									width: '100%',
