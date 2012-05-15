@@ -1,6 +1,6 @@
 function viewMatchHistory(region, accountId)
 {
-	apiGetSummonerProfile(region, accountId, function (response) { onGetSummonerProfileForMatchHistory(r
+	apiGetSummonerProfile(region, accountId, function (response) { onGetSummonerProfileForMatchHistory(response, region); } );
 }
   
 function renderMatchHistory( summoner, games)
