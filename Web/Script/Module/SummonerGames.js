@@ -46,10 +46,10 @@ function renderChampionTable( game, current) {
 	
 	var gameTable_tr_otherInformations =
 		Builder.node( 'tr');
-		
+	
 	gameTable_tr_championIcon = appendChilds( gameTable_tr_championIcon,
-		Builder.node('td', icon('Champion/Large/' + championName + '.png', championName)));
-	gameTable_tr_otherInformations = appendChilds( gameTable_tr_championIcon,
+		Builder.node('td', image('Champion/Large/' + championName + '.png', championName, 200, 200)));
+	gameTable_tr_otherInformations = appendChilds( gameTable_tr_otherInformations,
 		Builder.node('td', championName),
 		Builder.node('td', 'Not Implement'));
 	
