@@ -53,12 +53,12 @@ function renderChampionTable( game, current) {
 	var gameTable_tr_otherInformations_td = Builder.node('td');
 	gameTable_tr_otherInformations_td = appendChilds( gameTable_tr_otherInformations_td,
 		Builder.node( 'img', 	{
-									src: getURL('Spell/Small/' + game.SummonerSpell1 + '.png'),
+									src: getURL('Image/Spell/Small/' + game.SummonerSpell1 + '.png'),
 									alt: getSummonerSpell(game.SummonerSpell1),
 									style: 'width: 20px; height: 20px;',
 								}),
 		Builder.node( 'img', 	{
-									src: getURL('Spell/Small/' + game.SummonerSpell2 + '.png'),
+									src: getURL('Image/Spell/Small/' + game.SummonerSpell2 + '.png'),
 									alt: getSummonerSpell(game.SummonerSpell2),
 									style: 'width: 20px; height: 20px;',
 								})
