@@ -28,6 +28,8 @@ function renderSummonerGame( game) {
 }
 
 function renderChampionTable( game, current) {
+	var championName = getChampionName(game.ChampionId);
+
 	var gameTable =
 		Builder.node( 'table',	{
 									width: '100%',
