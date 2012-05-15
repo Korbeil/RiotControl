@@ -50,14 +50,25 @@ function renderChampionTable( game, current) {
 	var gameTable_tr_otherInformations =
 		Builder.node( 'tr');
 	
+	var gameTable_tr_otherInformations_td = Builder.node('td');
+	gameTable_tr_otherInformations_td = appendChilds( gameTable_tr_otherInformations_td,
+		Builder.node( 'img', 	{
+									src: getURL('Spell/Small/' + game.SummonerSpell1 + '.png'),
+									alt: getSummonerSpell(game.SummonerSpell1),
+									style: 'width: 20px; height: 20px;',
+								}),
+		Builder.node( 'img', 	{
+									src: getURL('Spell/Small/' + game.SummonerSpell2 + '.png'),
+									alt: getSummonerSpell(game.SummonerSpell2),
+									style: 'width: 20px; height: 20px;',
+								})
+	);
+	
 	gameTable_tr_championIcon = appendChilds( gameTable_tr_championIcon,
 		Builder.node('td', { colspan: '2'}, image('Champion/Large/' + championName + '.png', championName, 140, 140)));
 	gameTable_tr_otherInformations = appendChilds( gameTable_tr_otherInformations,
 		Builder.node('td', championName),
-		Builder.node('td',
-			'<img src="'+getURL('Spell/Small/' + game.SummonerSpell1 + '.png')+'" alt!"'+getSummonerSpell(game.SummonerSpell1)+'" style="width: 20px; height: 20px;">' +
-			'<img src="'+getURL('Spell/Small/' + game.SummonerSpell2 + '.png')+'" alt!"'+getSummonerSpell(game.SummonerSpell2)+'" style="width: 20px; height: 20px;">'
-		)
+		gameTable_tr_otherInformations_td
 	);
 	
 	gameTable_tbody.appendChild(gameTable_tr_championIcon);
