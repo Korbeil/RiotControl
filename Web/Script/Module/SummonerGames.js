@@ -35,7 +35,8 @@ function renderChampionTable( game, current) {
 
 	var gameTable =
 		Builder.node( 'table',	{
-									width: '49%',
+									width: '150px',
+									height: '540px',
 									cellpadding: '2',
 									cellspacing: '0',
 									display: 'inline-table',
@@ -55,12 +56,12 @@ function renderChampionTable( game, current) {
 		Builder.node( 'img', 	{
 									src: getURL('Image/Spell/Small/' + game.SummonerSpell1 + '.png'),
 									alt: getSummonerSpell(game.SummonerSpell1),
-									style: 'width: 20px; height: 20px;',
+									style: 'width: 24px; height: 24px;',
 								}),
 		Builder.node( 'img', 	{
 									src: getURL('Image/Spell/Small/' + game.SummonerSpell2 + '.png'),
 									alt: getSummonerSpell(game.SummonerSpell2),
-									style: 'width: 20px; height: 20px;',
+									style: 'width: 24px; height: 24px;',
 								})
 	);
 	
