@@ -67,4 +67,16 @@ echo "######################"
 
 cd ./RiotGear
 xbuild
+cd ..
+
+echo "########################"
+echo "#  [Build] RiotShield  #"
+echo "########################"
+
+cd ./RiotShield
+xbuild
+
+echo "##################################################"
+echo "#  RiotShield builded in ./RiotShield/bin/Debug  #"
+echo "##################################################"
 
