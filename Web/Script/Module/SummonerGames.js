@@ -17,11 +17,14 @@ function renderSummonerGames(summoner, games)
 	var element = Builder.node('div', { id:'games' });
 	$('content').appendChild(element);
 
-	games.each(renderSummonerGame);
+	for( var i = 0; i < games.length; i = i + 2) {
+		renderSummonerGame( games[i] , i);
+		renderSummonerGame( games[i+1], i);
+	}
 }
  
-function renderSummonerGame( game) {
-	var current = 'game_'+game.InternalGameId;
+function renderSummonerGame( game, div) {
+	var current = 'game_'+div;
 	$('games').insert( Builder.node( 'div', { id:current}));
 	
 	renderChampionTable( game, current);
@@ -32,7 +35,7 @@ function renderChampionTable( game, current) {
 
 	var gameTable =
 		Builder.node( 'table',	{
-									width: '100%',
+									width: '49%',
 									cellpadding: '2',
 									cellspacing: '0',
 									boder: '1',
@@ -48,10 +51,12 @@ function renderChampionTable( game, current) {
 		Builder.node( 'tr');
 	
 	gameTable_tr_championIcon = appendChilds( gameTable_tr_championIcon,
-		Builder.node('td', { colspan: '2'}, image('Champion/Large/' + championName + '.png', championName, 100, 100)));
+		Builder.node('td', { colspan: '2'}, image('Champion/Large/' + championName + '.png', championName, 140, 140)));
 	gameTable_tr_otherInformations = appendChilds( gameTable_tr_otherInformations,
 		Builder.node('td', championName),
-		Builder.node('td', 'Not Implement'));
+		Builder.node('td',
+			image('Spell/Small/' + game.SummonerSpell1 + '.png', getSummonerSpell(game.SummonerSpell1), 20, 20) +
+			image('Spell/Small/' + game.SummonerSpell2 + '.png', getSummonerSpell(game.SummonerSpell2), 20, 20));
 	
 	gameTable_tbody.appendChild(gameTable_tr_championIcon);
 	gameTable_tbody.appendChild(gameTable_tr_otherInformations);
