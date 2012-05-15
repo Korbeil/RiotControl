@@ -55,8 +55,9 @@ function renderChampionTable( game, current) {
 	gameTable_tr_otherInformations = appendChilds( gameTable_tr_otherInformations,
 		Builder.node('td', championName),
 		Builder.node('td',
-			image('Spell/Small/' + game.SummonerSpell1 + '.png', getSummonerSpell(game.SummonerSpell1), 20, 20) + '' +
-			image('Spell/Small/' + game.SummonerSpell2 + '.png', getSummonerSpell(game.SummonerSpell2), 20, 20))
+			'<img src="'+getURL('Spell/Small/' + game.SummonerSpell1 + '.png')+'" alt!"'+getSummonerSpell(game.SummonerSpell1)+'" style="width: 20px; height: 20px;">' +
+			'<img src="'+getURL('Spell/Small/' + game.SummonerSpell2 + '.png')+'" alt!"'+getSummonerSpell(game.SummonerSpell2)+'" style="width: 20px; height: 20px;">'
+		)
 	);
 	
 	gameTable_tbody.appendChild(gameTable_tr_championIcon);
