@@ -2,6 +2,15 @@ RiotControl
 ===========
 
 
+How to compile on Linux
+-----------------------
+
+Clone this repo, and use:
+
+    $ ./compileForLinux
+    
+to start compiling. Your build is put in "./RiotShield/bin/Debug/".
+
 
 About ./Website/
 ----------------
