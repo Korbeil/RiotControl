@@ -6,7 +6,11 @@
       var update_automatically = false;
       var not_update_automatically = false;
       
-	  function globalFunc( string = "") {
+	  function globalFunc( string) {
+		if( typeof string == "undefined") {
+			string = '';
+		}
+	  
 	    if( eval(string+'update_automatically')) {
 		  eval(string+'update_automatically = false;');
 		  Effect.BlindUp(string+'update_automatically');
