@@ -6,37 +6,18 @@
       var update_automatically = false;
       var not_update_automatically = false;
       
-      function more_update_automatically() {
-        if( update_automatically) {
-          update_automatically = false;
-          Effect.BlindUp('update_automatically');
-          //$('update_automatically').setStyle( { visibility:'hidden' } );
-          
-          $('more_update_automatically').innerHTML = '+';
-        } else {
-          update_automatically = true;
-          Effect.BlindDown('update_automatically');
-          $('update_automatically').setStyle( { visibility:'visible' } );
-
-          $('more_update_automatically').innerHTML = '-';
-        }
-      }
-
-      function more_not_update_automatically() {
-        if( not_update_automatically) {
-          not_update_automatically = false;
-          Effect.BlindUp('not_update_automatically');
-          //$('not_update_automatically').setStyle( { visibility:'hidden' } );
-          
-          $('more_not_update_automatically').innerHTML = '+';
-        } else {
-          not_update_automatically = true;
-          Effect.BlindDown('not_update_automatically');
-          $('not_update_automatically').setStyle( { visibility:'visible' } );
-        
-          $('more_not_update_automatically').innerHTML = '-';
-        }
-      }
+	  function globalFunc( string = "") {
+	    if( eval(string+'update_automatically')) {
+		  eval(string+'update_automatically = false;');
+		  Effect.BlindUp(string+'update_automatically');
+		  $('more_'+string+'update_automatically').innerHTML = '+';
+	    } else {
+		  eval(string+'update_automatically = true;');
+		  Effect.BlindDown(string+'update_automatically');
+		  $(string+'update_automatically').setStyle( { visibility:'visible' } );
+		  $('more_'+string+'update_automatically').innerHTML = '-';
+		}
+	  }
     </script>
   </head>
   <body>
@@ -80,8 +61,8 @@
       Effect.BlindUp('update_automatically');
       Effect.BlindUp('not_update_automatically');
       
-      Event.observe( 'more_update_automatically', 'click', more_update_automatically);
-      Event.observe( 'more_not_update_automatically', 'click', more_not_update_automatically);
+      Event.observe( 'more_update_automatically', 'click', function() { globalFunc(); });
+      Event.observe( 'more_not_update_automatically', 'click', function() { globalFunc( 'not_'); });
     </script>
   </body>
 </html>
