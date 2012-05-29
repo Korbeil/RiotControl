@@ -25,6 +25,10 @@
     </script>
   </head>
   <body>
+	<center><span style="font-size:xx-small;">Orginal idea from Uhkis FreeNode#riotcontrol</span></center>
+	
+	<br/><a href="index.php">Back</a><br/><br/>
+  
 <?php
   require ('include/function.php');
 
@@ -34,8 +38,6 @@
     1 => "EUW",
     2 => "EUNE",
   );
-
-  echo '<center><span style="font-size:xx-small;">Orginal idea from Uhkis FreeNode#riotcontrol</span></center>';
 
   echo "<br/><br/>";
   
