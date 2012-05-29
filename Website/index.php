@@ -26,7 +26,7 @@
   </head>
   <body>
 <?php
-  require ('function.php');
+  require ('include/function.php');
 
   $link = connect();
   $region = Array(
