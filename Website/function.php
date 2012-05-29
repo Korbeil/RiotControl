@@ -1,8 +1,9 @@
 <?php
 
   function connect() {
-    $link = mysql_connect( 'localhost', 'riotcontrol', 'riotpass567');
-    mysql_select_db( 'riotcontrol', $link);
+	$config = parse_ini_file( 'config.ini', true);
+    $link = mysql_connect( $config['mysql']['hostname'], $config['mysql']['username'], $config['mysql']['password']);
+    mysql_select_db( $config['mysql']['database'], $link);
     return $link;
   }
 
