@@ -25,5 +25,37 @@
     return $array;
   }
 
+	function getScriptSummonerList() {
+		return "
+			<script type=\"text/javascript\">
+				var update_automatically = false;
+				var not_update_automatically = false;
+				  
+				function globalFunc( string) {
+					if( typeof string == \"undefined\") {
+						string = '';
+					}
+				  
+					if( eval(string+'update_automatically')) {
+						eval(string+'update_automatically = false;');
+						Effect.BlindUp(string+'update_automatically');
+						$('more_'+string+'update_automatically').innerHTML = '+';
+					} else {
+						eval(string+'update_automatically = true;');
+						Effect.BlindDown(string+'update_automatically');
+						$(string+'update_automatically').setStyle( { visibility:'visible' } );
+						$('more_'+string+'update_automatically').innerHTML = '-';
+					}
+				}
+				
+				Effect.BlindUp('update_automatically');
+				Effect.BlindUp('not_update_automatically');
+				  
+				Event.observe( 'more_update_automatically', 'click', function() { globalFunc(); });
+				Event.observe( 'more_not_update_automatically', 'click', function() { globalFunc( 'not_'); });
+			</script>
+		";
+	}
+
 ?>
 
