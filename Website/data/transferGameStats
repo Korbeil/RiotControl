@@ -1,0 +1,55 @@
+#!/usr/bin/php
+<?php
+
+// MySQL
+
+$config = parse_ini_file( '../config/config.ini', true);
+
+$MySQL_User = $config['mysql']['username'];
+$MySQL_Pass = $config['mysql']['password'];
+$MySQL_DBName = 'gameStats';
+
+// SQLite
+
+$SQLite_Path = '../data/';
+
+////////////////////////////////////////////////////////////////////////////
+
+$PDO_SQLite = NULL;
+$PDO_MySQL = NULL;
+
+function request( $PDO, $string) {
+  $data = $PDO->query($query);
+  $data->execute();
+  return $data->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function sqlite_request( $string) {
+  global $PDO_SQLite;
+  return request( $PDO_SQLite, $string);
+}
+
+function mysql_request( $string) {
+  global $PDO_MySQL;
+  return request( $PDO_MySQL, $string);
+}
+
+$PDO_MySQL = new PDO('mysql:host=localhost;dbname='.$MySQL_DBName, $MySQL_User, $MySQL_Pass);
+
+$SQLite_Databases = glob( $SQLite_Path. '*.sqlite');
+
+$stats = false;
+foreach( $SQLite_Databases as $SQLite_Database) {
+  $PDO_SQLite = new PDO('sqlite:'.$SQLite_Database);
+
+  if( !$stats) {
+    // take all stats
+    
+    $stats = true;
+  }
+
+  // take all text
+}
+
+?>
+
