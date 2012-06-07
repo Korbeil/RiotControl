@@ -1,7 +1,7 @@
---SQL
+
 -- `gameStats` database
 
-CREATE DATABASE `gameStats`;
+--CREATE DATABASE `gameStats`;
 USE `gameStats`;
 
 CREATE TABLE `i18n` (
@@ -15,7 +15,7 @@ CREATE TABLE `i18n` (
 
 CREATE TABLE `items` (
 	`id` INTEGER NOT NULL,
-	`name` INTEGER NOT NULL -- TEXT
+	`name` INTEGER NOT NULL, -- TEXT
 	`description` INTEGER NOT NULL, -- TEXT
 	`iconPath` CHAR(255) NOT NULL,
 	`price` INTEGER NOT NULL,
@@ -151,7 +151,7 @@ CREATE TABLE `champions` (
 
 CREATE TABLE `searchTags` (
 	`id` INT NOT NULL,
-	`name` CHAR(255)
+	`name` CHAR(255) NOT NULL,
 	`displayName` INT NOT NULL,
 	
 	PRIMARY KEY( `id`)
@@ -213,8 +213,8 @@ CREATE TABLE `championAbilities` (
 	`description` INTEGER NOT NULL,
 	`hotkey` CHAR(1) NOT NULL,
 	
-	PRIMARY KEY( `id`),
-	FOREIGN ( `championId`) REFERENCES `champions`( `id`),
+	PRIMARY KEY ( `id`),
+	FOREIGN KEY ( `championId`) REFERENCES `champions`( `id`),
 	
 	FOREIGN KEY ( `name`) REFERENCES `i18n`( `id`),
 	FOREIGN KEY ( `effect`) REFERENCES `i18n`( `id`),
