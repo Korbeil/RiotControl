@@ -36,8 +36,45 @@ function mysql_request( $string) {
 
 $PDO_MySQL = new PDO('mysql:host=localhost;dbname='.$MySQL_DBName, $MySQL_User, $MySQL_Pass);
 
+// SQLite databases init
 $SQLite_Databases = glob( $SQLite_Path. '*.sqlite');
 
+// MySQL init
+$tables = Array();
+$text_cols = Array();
+$stats_cols = Array();
+$result = mysql_request( 'SHOW TABLES;');
+foreach( $result as $current) {
+	if( $current['Tables_in_gameStats'] != 'i18n') {
+		$tables[] = $current['Tables_in_gameStats'];
+	}
+}
+
+foreach( $tables as $table) {
+
+	// text cols
+	$result = mysql_request( "SELECT COLUMN_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_SCHEMA = 'gameStats' AND TABLE_NAME = '$table' AND REFERENCED_TABLE_NAME = 'i18n'");
+	
+	if( count( $result) > 0) {
+		$text_cols[$table] = Array();
+		foreach( $result as $current) {
+			$text_cols[$table][] = $current['COLUMN_NAME'];
+		}
+	}
+	
+	// stats cols
+	$result = mysql_request( "SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'gameStats' AND TABLE_NAME = '$table';");
+	
+	$stats_cols[$table] = Array();
+	foreach( $result as $current) {
+		if( !in_array( $current['COLUMN_NAME'], $text_cols[$table])) {
+			$stats_cols[$table][] = $current['COLUMN_NAME'];
+		}
+	}
+}
+
+/*
+// Let's GO !
 $stats = false;
 foreach( $SQLite_Databases as $SQLite_Database) {
   $PDO_SQLite = new PDO('sqlite:'.$SQLite_Database);
@@ -45,11 +82,14 @@ foreach( $SQLite_Databases as $SQLite_Database) {
   if( !$stats) {
     // take all stats
     
+    
+    
     $stats = true;
   }
 
   // take all text
 }
+*/
 
 ?>
 
