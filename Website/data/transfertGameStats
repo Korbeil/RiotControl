@@ -1,0 +1,22 @@
+#!/usr/bin/php
+<?php
+
+// MySQL
+
+$config = parse_ini_file( '../config/config.ini', true);
+
+$MySQL_User = $config['mysql']['username'];
+$MySQL_Pass = $config['mysql']['password'];
+$MySQL_DBName = 'gameStats';
+
+// SQLite
+
+$SQLite_Path = '../data/';
+
+////////////////////////////////////////////////////////////////////////////
+
+$PDO_SQLite = NULL;
+$PDO_MySQL = NULL;
+
+?>
+
