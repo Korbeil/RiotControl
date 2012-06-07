@@ -9,7 +9,7 @@ CREATE TABLE `i18n` (
 	`langage` CHAR(4) NOT NULL,
 	`text` TEXT NOT NULL,
 	
-	PRIMARY KEY( `id`)
+	PRIMARY KEY( `id`, `langage`)
 	
 ) ENGINE=InnoDB;
 
