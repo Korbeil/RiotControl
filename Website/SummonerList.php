@@ -8,6 +8,7 @@
 <?php
 	include_once( 'include/page/menu_bottom.php');
 
+  echo '<br/><br/>';
 	echo '<center><span style="font-size:xx-small;">Orginal idea from Uhkis FreeNode#riotcontrol</span></center>';
 
 	$link = connect();
