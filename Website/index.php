@@ -38,7 +38,7 @@
     	<?php include_once( 'include/tab-panes/Summoner.php'); ?>
       </div>
       <div class="tab-pane" id="database">
-        <p>Database pane</p>
+    	<?php include_once( 'include/tab-panes/Database.php'); ?>
       </div>
       <div class="tab-pane" id="about">
         <p>About pane</p>
