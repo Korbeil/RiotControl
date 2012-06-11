@@ -1,13 +1,28 @@
 <?php
 	require ('include/function.php');
-
-	include_once( 'include/page/header.php');
-	include_once( 'include/page/menu_top.php');
 ?>
-	<center><h3>RiotControl Tools</h3></center>
-<?php
-	include_once( 'include/page/menu_bottom.php');
 
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="include/style/style.css" media="all">
+		
+		<script src="http://script.aculo.us/prototype.js" type="text/javascript"></script>
+		<script src="http://script.aculo.us/scriptaculous.js" type="text/javascript"></script>
+	</head>
+	<body>
+			
+			<div id="content">
+			<div id="menu">
+			
+	<center><h3>RiotControl Tools</h3></center>
+
+</div>
+
+<table id="main" width="100%"><tr id="main"><td valign="center"><center>
+<?php
   echo '<br/><br/>';
 	echo '<center><span style="font-size:xx-small;">Orginal idea from Uhkis FreeNode#riotcontrol</span></center>';
 
@@ -45,6 +60,9 @@
 		</td></tr></table>';
 
 	echo getScriptSummonerList();
-  
-	include_once( 'include/page/footer.php');
 ?>
+
+</center></td></tr></table>
+</div>
+</body>
+</html>
