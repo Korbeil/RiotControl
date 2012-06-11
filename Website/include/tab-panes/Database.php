@@ -1,4 +1,4 @@
-<div class="tabbable">
+<div class="tabbable tabs-left" style="margin-left:-50px;">
   <ul class="nav nav-tabs">
 	<li class="active"><a href="#champions" data-toggle="tab">Champions</a></li>
 	<li><a href="#items" data-toggle="tab">Items</a></li>
