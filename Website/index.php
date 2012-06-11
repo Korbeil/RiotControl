@@ -19,7 +19,7 @@
       <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
       <li><a href="#summoner" data-toggle="tab">Summoners</a></li>
       <li class="dropdown">
-    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Database <i class="icon-chevron-down"></i></a>
+    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Database <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li><a href="#database">Champions</a></li>
             <li><a href="#database">Items</a></li>
