@@ -32,8 +32,8 @@
       <div class="tab-pane active" id="home">
         <p>Home pane</p>
       </div>
-      <div class="tab-pane" id="sumsummonerm">
-        <p>Summoners pane</p>
+      <div class="tab-pane" id="summoner">
+    	<?php include_once( 'include/tab-panes/Summoner.php'); ?>
       </div>
       <div class="tab-pane" id="database">
         <p>Database pane</p>
