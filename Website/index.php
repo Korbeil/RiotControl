@@ -11,20 +11,13 @@
 
 <div class="container">
   <br/>
-  <div class="well">
   <div class="tabbable"> <!-- Only required for left/right tabs -->
     
     <!-- menu -->
     <ul class="nav nav-tabs">
       <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
       <li><a href="#summoner" data-toggle="tab">Summoners</a></li>
-      <li class="dropdown">
-    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Database <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a href="#database">Champions</a></li>
-            <li><a href="#database">Items</a></li>
-    	</ul>
-	  </li>
+      <li><a href="#database" data-toggle="tab">Database</a></li>
       <li><a href="#about" data-toggle="tab">About</a></li>
       
       <li class="pull-right">
@@ -43,7 +36,6 @@
       <div class="tab-pane" id="summoner">
     	<?php include_once( 'include/tab-panes/Summoner.php'); ?>
       </div>
-      
       <div class="tab-pane" id="database">
     	<?php include_once( 'include/tab-panes/Database.php'); ?>
       </div>
@@ -51,8 +43,7 @@
         <p>About pane</p>
       </div>
     </div>
-  
-  </div>
+
 </div>
 
 <?php
