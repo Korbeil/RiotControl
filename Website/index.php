@@ -23,13 +23,15 @@
       
       <li class="pull-right">
         <div class="input-append">
-			<input type="search" class="span3" placeholder="Search" name="search" id="search"><a class="btn add-on" href="#"><i class="icon-search"></i></a>
-			<div class="btn-group"><button class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button></div>
-        	<ul class="dropdown-menu">
-        		<li><a href="#">Summoner</a></li>
-        		<li><a href="#">Champion</a></li>
-        		<li><a href="#">Item</a></li>
-          	</ul>
+			<input type="search" class="span3" placeholder="Search" name="search" id="search">
+			<div class="btn-group">
+      			<button class="btn btn-large dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></button>
+    			<ul class="dropdown-menu">
+    				<li><a href="#">Summoner</a></li>
+        			<li><a href="#">Champion</a></li>
+        			<li><a href="#">Item</a></li>
+          		</ul>
+        	</div>
         </div>
       </li>
       
