@@ -22,8 +22,14 @@
       <li><a href="#about" data-toggle="tab">About</a></li>
       <li class="pull-right">
         <div class="input-append">
-          <input type="search" class="span3" placeholder="Search" name="search" id="search"><select class="combobox"><option>A</option><option>B</option><option>C<option></select><a class="btn add-on" href="#"><i class="icon-search"></i></a>
+          <input type="search" class="span3" placeholder="Search" name="search" id="search"><a class="btn add-on" href="#"><i class="icon-search"></i></a>
         </div>
+        
+        <select class="combobox">
+        	<option>Summoner</option>
+        	<option>Champion</option>
+        	<option>Item</option>
+        </select>
       </li>
     </ul>
     
