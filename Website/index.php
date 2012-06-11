@@ -24,7 +24,8 @@
         <div class="input-append">
           <input type="search" class="span3" placeholder="Search" name="search" id="search"><a class="btn add-on" href="#"><i class="icon-search"></i></a>
         </div>
-        
+      </li>
+      <li class="pull-right">
         <select class="combobox">
         	<option>Summoner</option>
         	<option>Champion</option>
