@@ -12,33 +12,40 @@
 <div class="container">
   <br/>
   <div class="well">
-
   <div class="tabbable"> <!-- Only required for left/right tabs -->
+    
+    <!-- menu -->
     <ul class="nav nav-tabs">
       <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-      <li><a href="#items" data-toggle="tab">Items</a></li>
-      <li><a href="#champions" data-toggle="tab">Champions</a></li>
+      <li><a href="#summoner" data-toggle="tab">Summoners</a></li>
+      <li><a href="#database" data-toggle="tab">Database</a></li>
+      <li><a href="#about" data-toggle="tab">About</a></li>
       <li class="pull-right">
         <div class="input-append">
-          <input type="search" class="span3" placeholder="Search" name="search" id="search"><a class="btn add-on" href="#"><i class="icon-search"></i></a>
+          <input type="search" class="span3" placeholder="Search" name="search" id="search"><select class="combobox"><option>A</option><option>B</option><option>C<option></select><a class="btn add-on" href="#"><i class="icon-search"></i></a>
         </div>
       </li>
     </ul>
+    
+    <!-- content -->
     <div class="tab-content">
       <div class="tab-pane active" id="home">
         <p>Home pane</p>
       </div>
-      <div class="tab-pane" id="items">
-        <p>Items pane</p>
+      <div class="tab-pane" id="sumsummonerm">
+        <p>Summoners pane</p>
       </div>
-      <div class="tab-pane" id="champions">
-        <p>Champions pane</p>
+      <div class="tab-pane" id="database">
+        <p>Database pane</p>
+      </div>
+      <div class="tab-pane" id="about">
+        <p>About pane</p>
       </div>
     </div>
+  
   </div>
 </div>
 
 <?php
-	
 	include_once( 'include/page/footer.php');
 ?>
