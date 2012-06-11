@@ -29,7 +29,7 @@
       
       <li class="pull-right">
       	<div class="btn-group">
-    		<input class="span3" id="search"></input><button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+    		<input type="search" class="span3" placeholder="Search" name="search" id="search"><button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
         	<ul class="dropdown-menu">
         		<li><a href="#">Summoner</a></li>
         		<li><a href="#">Champion</a></li>
