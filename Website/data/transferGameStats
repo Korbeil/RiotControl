@@ -45,12 +45,12 @@ function generateQueries( $tableName, $references, $results) {
 	foreach( $results as $current) {
 		$sql = 'INSERT INTO `'.$tableName.'` ( '.makeArrayRequest( $references).') VALUES ( ';
 		
-		$values = Array();
+    $values = Array();
 		foreach( $references as $column) {
-			$values[] = $result[$column];
+			$values[] = $current[$column];
 		}
 		
-		$sql .= makeArrayrRequest( $values);
+		$sql .= makeArrayRequest( $values);
 		$sql_queries[] = $sql;
 	}
 	
@@ -95,7 +95,7 @@ foreach( $tables as $table) {
 	
 	$stats_cols[$table] = Array();
 	foreach( $result as $current) {
-		if( !in_array( $current['COLUMN_NAME'], $text_cols[$table])) {
+		if( $text_cols[$table] != NULL && !in_array( $current['COLUMN_NAME'], $text_cols[$table])) {
 			$stats_cols[$table][] = $current['COLUMN_NAME'];
 		}
 	}
