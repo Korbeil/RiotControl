@@ -18,8 +18,14 @@ $SQLite_Path = '../data/';
 $PDO_SQLite = NULL;
 $PDO_MySQL = NULL;
 
+function makeArrayRequest( $array) {
+	$string = '';
+	foreach( $array as $value) { $string .= '`'.$value.'`, '; }
+	return substr_replace($string , '', -2);
+}
+
 function request( $PDO, $string) {
-  $data = $PDO->query($query);
+  $data = $PDO->query($string);
   $data->execute();
   return $data->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -32,6 +38,28 @@ function sqlite_request( $string) {
 function mysql_request( $string) {
   global $PDO_MySQL;
   return request( $PDO_MySQL, $string);
+}
+
+function generateQueries( $tableName, $references, $results) {
+	$sql_queries = Array();
+	foreach( $results as $current) {
+		$sql = 'INSERT INTO `'.$tableName.'` ( '.makeArrayRequest( $references).') VALUES ( ';
+		
+		$values = Array();
+		foreach( $references as $column) {
+			$values[] = $result[$column];
+		}
+		
+		$sql .= makeArrayrRequest( $values);
+		$sql_queries[] = $sql;
+	}
+	
+	return $sql_queries;
+}
+
+function launch_queries( $queries) {
+	print_r( $queries);
+	exit();
 }
 
 $PDO_MySQL = new PDO('mysql:host=localhost;dbname='.$MySQL_DBName, $MySQL_User, $MySQL_Pass);
@@ -73,23 +101,30 @@ foreach( $tables as $table) {
 	}
 }
 
-/*
 // Let's GO !
+		/*
+		if( !$stats || $stats_inProgress) {
+		}
+		*/
+		
 $stats = false;
 foreach( $SQLite_Databases as $SQLite_Database) {
-  $PDO_SQLite = new PDO('sqlite:'.$SQLite_Database);
+	$PDO_SQLite = new PDO('sqlite:'.$SQLite_Database);
 
-  if( !$stats) {
-    // take all stats
-    
-    
-    
-    $stats = true;
-  }
+	$sql_queries = Array();
+	foreach( $tables as $table) {
+		$result = sqlite_request( "SELECT * FROM $table");
+		
+		if( !$stats) {
+			array_merge( $sql_queries, generateQueries( $table, $stats_cols[$table], $result));
+			$stats = true;
+		}
+		
+		array_merge( $sql_queries, generateQueries( $table, $text_cols[$table], $result));
+	}
 
-  // take all text
+	launch_queries( $sql_queries);
 }
-*/
 
 ?>
 

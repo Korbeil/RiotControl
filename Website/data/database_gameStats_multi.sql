@@ -15,8 +15,8 @@ CREATE TABLE `i18n` (
 
 CREATE TABLE `items` (
 	`id` INTEGER NOT NULL,
-	`name` INTEGER NOT NULL, -- TEXT
-	`description` INTEGER NOT NULL, -- TEXT
+	`name` INTEGER NULL DEFAULT NULL, 			-- TEXT
+	`description` INTEGER NULL DEFAULT NULL, 	-- TEXT
 	`iconPath` CHAR(255) NOT NULL,
 	`price` INTEGER NOT NULL,
 	
@@ -98,17 +98,17 @@ CREATE TABLE `itemItemCategories` (
 CREATE TABLE `champions` (
 	`id` INTEGER NOT NULL,
 	
-	`name` INTEGER NOT NULL,
-	`displayName` INTEGER NOT NULL,
-	`title` INTEGER NOT NULL,
+	`name` INTEGER NULL DEFAULT NULL,
+	`displayName` INTEGER NULL DEFAULT NULL,
+	`title` INTEGER NULL DEFAULT NULL,
 	`iconPath` CHAR(255) NOT NULL,
 	`portraitPath` CHAR(255) NOT NULL,
 	`splashPath` CHAR(255) NOT NULL,
 	`danceVideoPath` CHAR(255) NOT NULL,
 	`tags` TEXT NOT NULL,
-	`description` INTEGER NOT NULL,
-	`quote` INTEGER NOT NULL,
-	`quoteAuthor` INTEGER NOT NULL,
+	`description` INTEGER NULL DEFAULT NULL,
+	`quote` INTEGER NULL DEFAULT NULL,
+	`quoteAuthor` INTEGER NULL DEFAULT NULL,
 	
 	`range` REAL NOT NULL DEFAULT 0,
 	`moveSpeed` REAL NOT NULL DEFAULT 0,
@@ -163,8 +163,8 @@ CREATE TABLE `championSkins` (
 	`isBase` BOOLEAN NOT NULL,
 	`rank` INTEGER NOT NULL,
 	`championId` INTEGER NOT NULL,
-	`name` INTEGER NOT NULL,
-	`displayName` INTEGER NOT NULL,
+	`name` INTEGER NULL DEFAULT NULL,
+	`displayName` INTEGER NULL DEFAULT NULL,
 	`portraitPath` CHAR(255) NOT NULL,
 	`splashPath` CHAR(255) NOT NULL,
 	
@@ -203,14 +203,14 @@ CREATE TABLE `championAbilities` (
 	`id` INTEGER NOT NULL,
 	`rank` INTEGER NOT NULL,
 	`championId` INTEGER NOT NULL,
-	`name` INTEGER NOT NULL,
+	`name` INTEGER NULL DEFAULT NULL,
 	`cost` CHAR(32) NOT NULL,
 	`cooldown` CHAR(32) NOT NULL,
 	`iconPath` CHAR(255) NOT NULL,
 	`videoPath` CHAR(255) NOT NULL,
 	`range` INTEGER NOT NULL,
-	`effect` INTEGER NOT NULL,
-	`description` INTEGER NOT NULL,
+	`effect` INTEGER NULL DEFAULT NULL,
+	`description` INTEGER NULL DEFAULT NULL,
 	`hotkey` CHAR(1) NOT NULL,
 	
 	PRIMARY KEY ( `id`),
