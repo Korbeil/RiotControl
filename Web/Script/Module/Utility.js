@@ -374,3 +374,10 @@ function getRegion(identifier)
     else
         return region;
 }
+
+function appendChilds( node) {
+	for( var i = 1; i < arguments.length; i++) {
+		node.appendChild( arguments[i]);
+	}
+	return node;
+}
