@@ -106,6 +106,10 @@ namespace RiotGear
 									map = MapType.TwistedTreeline;
 									break;
 
+								case 7:
+									map = MapType.ProvingGrounds;
+									break;
+
 								case 8:
 									map = MapType.Dominion;
 									break;
@@ -113,7 +117,7 @@ namespace RiotGear
 								default:
 									throw new Exception(string.Format("Unknown game map ID in the match history of {0}: {1}", summoner.SummonerName, game.gameMapId));
 							}
-							if (game.gameType == "PRACTICE_GAME")
+							if (game.gameType == "PRACTICE_GAME" || game.gameType == "CUSTOM_GAME")
 								gameMode = GameModeType.Custom;
 							else
 							{
